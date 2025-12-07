@@ -17,11 +17,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\VRCFaceTracking\VRCFaceTracking.Core\VRCFaceTracking.Core.csproj" />
+    <ProjectReference Include="..\..\..\VRCFT-Babble\VRCFaceTracking.Babble.csproj" />
+    <ProjectReference Include="..\..\BabbleVRCFTModule\VRCFaceTracking\VRCFaceTracking.Core\VRCFaceTracking.Core.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd $(SolutionDir)res\&#xD;&#xA;python moduleupdate.py&#xD;&#xA;xcopy /s /I $(SolutionDir)res\*.json $(ProjectDir)bin\$(Configuration)\$(TargetFramework) /Y&#xD;&#xA;xcopy /s /F $(ProjectDir)bin\$(Configuration)\$(TargetFramework)\module.json %25AppData%25\VRCFaceTracking\CustomLibs\2a8c8080-2a76-46af-bf76-1da7c0127ef8\ /Y&#xD;&#xA;xcopy /s /F $(ProjectDir)bin\$(Configuration)\$(TargetFramework)\SteamLinkVRCFTModule.dll %25AppData%25\VRCFaceTracking\CustomLibs\2a8c8080-2a76-46af-bf76-1da7c0127ef8\ /Y" />
-  </Target>
+  <ItemGroup>
+    <PackageReference Include="ILRepack" Version="2.0.44">
+      <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    <PackageReference Include="ILRepack.MSBuild.Task" Version="1.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
+  </ItemGroup>
 
+  <Target Name="ILRepack" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <ItemGroup>
+      <InputAssemblies Include="$(OutputPath)\SteamLinkVRCFTModule.dll" />
+      <InputAssemblies Include="$(OutputPath)\VRCFaceTracking.Babble.dll" />
+    </ItemGroup>
+    <ILRepack Parallel="true" Internalize="true" InputAssemblies="@(InputAssemblies)" TargetKind="Dll" OutputFile="$(OutputPath)\SteamLinkBabbleTongueIntegration.dll" />
+  </Target>
+	
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd $(SolutionDir)res\&#xD;&#xA;python moduleupdate.py&#xD;&#xA;xcopy /s /I $(SolutionDir)res\*.json $(ProjectDir)bin\$(Configuration)\$(TargetFramework) /Y" />
+  </Target>
 </Project>

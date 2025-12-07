@@ -88,8 +88,8 @@ namespace SteamLinkVRCFTModule
             { NoseSneerLeft,0.0f},
             {NoseSneerRight ,0.0f},
 
-            {TongueCurlUp ,0.0f},
-            {TongueOut ,0.0f},
+            //{TongueCurlUp ,0.0f},
+            //{TongueOut ,0.0f},
 
             };
 
@@ -167,7 +167,7 @@ namespace SteamLinkVRCFTModule
                 //{"/sl/xrfb/facew/BackDorsalVelar",  new List<UnifiedExpressions>{} },
                 //{"/sl/xrfb/facew/TongueRetreat",  new List<UnifiedExpressions>{} },
                 //{"/sl/xrfb/facew/TongueTipAlveolar", new List<UnifiedExpressions>{TongueCurlUp} },
-                {"/sl/xrfb/facew/TongueOut", new List<UnifiedExpressions>{TongueOut} },
+                //{"/sl/xrfb/facew/TongueOut", new List<UnifiedExpressions>{TongueOut} },
             };
 
 

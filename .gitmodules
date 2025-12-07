@@ -1,3 +1,6 @@
 [submodule "VRCFaceTracking"]
 	path = VRCFaceTracking
 	url = https://github.com/benaclejames/VRCFaceTracking.git
+[submodule "BabbleVRCFTModule"]
+	path = BabbleVRCFTModule
+	url = https://github.com/OrendCross/VRCFT-Babble.git

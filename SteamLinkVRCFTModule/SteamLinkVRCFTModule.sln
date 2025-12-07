@@ -5,7 +5,11 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SteamLinkVRCFTModule", "SteamLinkVRCFTModule\SteamLinkVRCFTModule.csproj", "{1A0F7A33-BAE4-4517-BAC8-EA474F32F9D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRCFaceTracking.Core", "..\VRCFaceTracking\VRCFaceTracking.Core\VRCFaceTracking.Core.csproj", "{8BF5B315-BB25-469F-A4D1-0900CE8A236C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRCFaceTracking.Babble", "..\..\VRCFT-Babble\VRCFaceTracking.Babble.csproj", "{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRCFaceTracking.Core", "..\BabbleVRCFTModule\VRCFaceTracking\VRCFaceTracking.Core\VRCFaceTracking.Core.csproj", "{5C239101-514D-42E4-9F68-482309089C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRCFaceTracking.SDK", "..\BabbleVRCFTModule\VRCFaceTracking\VRCFaceTracking.SDK\VRCFaceTracking.SDK.csproj", "{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +27,30 @@ Global
 		{1A0F7A33-BAE4-4517-BAC8-EA474F32F9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A0F7A33-BAE4-4517-BAC8-EA474F32F9D3}.Release|x64.ActiveCfg = Release|Any CPU
 		{1A0F7A33-BAE4-4517-BAC8-EA474F32F9D3}.Release|x64.Build.0 = Release|Any CPU
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Debug|Any CPU.Build.0 = Debug|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Debug|x64.ActiveCfg = Debug|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Debug|x64.Build.0 = Debug|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Release|Any CPU.ActiveCfg = Release|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Release|Any CPU.Build.0 = Release|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Release|x64.ActiveCfg = Release|x64
-		{8BF5B315-BB25-469F-A4D1-0900CE8A236C}.Release|x64.Build.0 = Release|x64
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Debug|x64.ActiveCfg = Debug|x64
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Debug|x64.Build.0 = Debug|x64
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Release|x64.ActiveCfg = Release|x64
+		{834F2A82-664C-4EE6-9FE3-4AA88D4750EB}.Release|x64.Build.0 = Release|x64
+		{5C239101-514D-42E4-9F68-482309089C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C239101-514D-42E4-9F68-482309089C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C239101-514D-42E4-9F68-482309089C4E}.Debug|x64.ActiveCfg = Debug|x64
+		{5C239101-514D-42E4-9F68-482309089C4E}.Debug|x64.Build.0 = Debug|x64
+		{5C239101-514D-42E4-9F68-482309089C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C239101-514D-42E4-9F68-482309089C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C239101-514D-42E4-9F68-482309089C4E}.Release|x64.ActiveCfg = Release|x64
+		{5C239101-514D-42E4-9F68-482309089C4E}.Release|x64.Build.0 = Release|x64
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Debug|x64.Build.0 = Debug|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Release|x64.ActiveCfg = Release|Any CPU
+		{3AB4FD31-7D4C-4CE5-AC39-B32C204E2CD1}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

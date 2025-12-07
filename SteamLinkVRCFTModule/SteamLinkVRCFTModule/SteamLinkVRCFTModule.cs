@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using VRCFaceTracking;
 using VRCFaceTracking.Core.Params.Expressions;
 using static VRCFaceTracking.Core.Params.Expressions.UnifiedExpressions;
+using VRCFaceTracking.Babble;
 
 namespace SteamLinkVRCFTModule
 {
@@ -11,6 +12,7 @@ namespace SteamLinkVRCFTModule
     {
         private OSCHandler OSCHandler;
         private const int DEFAULT_PORT = 9015;
+        private BabbleOSC babbleOSC;
 
         public override (bool SupportsEye, bool SupportsExpression) Supported => (true, true);
 
@@ -23,6 +25,9 @@ namespace SteamLinkVRCFTModule
 
             //TODO better error handling on fail? isInit for OSC Handler?
             OSCHandler = new OSCHandler(Logger, DEFAULT_PORT);
+
+            Config babbleConfig = BabbleConfig.GetBabbleConfig();
+            babbleOSC = new BabbleOSC(logger: Logger, babbleConfig.Host, babbleConfig.Port);
 
             return (true, true);
         }
@@ -80,6 +85,11 @@ namespace SteamLinkVRCFTModule
             {
                 UnifiedTracking.Data.Shapes[(int)entry.Key].Weight = entry.Value;
             }
+
+            foreach (UnifiedExpressions expression in BabbleExpressions.BabbleExpressionMap)
+            {
+                UnifiedTracking.Data.Shapes[(int)expression].Weight = BabbleExpressions.BabbleExpressionMap.GetByKey1(expression);
+            }
             //?? fix some weird ft things need to check (Its not needed anymore, this in fact causes upper lip to not move properly, its more notorious when you try to set an "eww" face)
             //UnifiedTracking.Data.Shapes[(int)MouthUpperUpLeft].Weight = Math.Max(0, UnifiedTracking.Data.Shapes[(int)MouthUpperUpLeft].Weight - UnifiedTracking.Data.Shapes[(int)NoseSneerLeft].Weight);
             //UnifiedTracking.Data.Shapes[(int)MouthUpperUpRight].Weight = Math.Max(0, UnifiedTracking.Data.Shapes[(int)MouthUpperUpRight].Weight - UnifiedTracking.Data.Shapes[(int)NoseSneerRight].Weight);
@@ -100,6 +110,7 @@ namespace SteamLinkVRCFTModule
         public override void Teardown()
         {
             OSCHandler.Teardown();
+            babbleOSC.Teardown();
         }
     }
 }

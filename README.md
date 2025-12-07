@@ -4,7 +4,7 @@ The Implementation is **EXPERIMENTAL** and may change without notice causing app
 
 ## Install
 
-- Download Latest Release from [Releases](https://github.com/ykeara/LinkFT/releases/latest)
+- Download Latest Release from [Releases](https://github.com/OrendCross/LinkFT.BabbleTongueIntegration/releases/latest)
 - In VRCFT go to modules and install from zip
 
 

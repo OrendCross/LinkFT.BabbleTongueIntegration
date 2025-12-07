@@ -1,15 +1,15 @@
 {
-    "ModuleId": "2a8c8080-2a76-46af-bf76-1da7c0127ef8",
-    "LastUpdated": "2025-09-03T19:31:20.499054",
-    "Version": "1.0.8",
+    "ModuleId": "0bd920c3-dfa9-4971-8a95-cab1e09800b8",
+    "LastUpdated": "2025-12-07T01:00:55.997214",
+    "Version": "1.0.8-BabbleTongueIntegration",
     "Downloads": 0,
     "Ratings": 0,
     "Rating": 0,
-    "AuthorName": "Ykeara",
-    "ModuleName": "SteamLink VRCFT Module",
-    "ModuleDescription": "VRCFT eye and face tracking module for steamlink on Meta Quest devices.",
-    "UsageInstructions": "Run on VRCFT Launch (uninstall if you need another module)",
-    "DownloadUrl": "https://github.com/ykeara/LinkFT/releases/latest/download/LinkFTModule.zip",
-    "ModulePageUrl": "https://github.com/ykeara/LinkFT",
-    "DllFileName": "SteamLinkVRCFTModule.dll"
+    "AuthorName": "Ykeara | OrendCross",
+    "ModuleName": "SteamLink VRCFT Module + Babble Tongue Integration",
+    "ModuleDescription": "VRCFT eye and face tracking module for steamlink on Meta Quest devices and tongue tracking using Project Babble.",
+    "UsageInstructions": "Run on VRCFT Launch (uninstall if you need another module), and have Project Babble running",
+    "DownloadUrl": "https://github.com/OrendCross/LinkFT.BabbleTongueIntegration/releases/latest/download/LinkFTTongueIntegrationModule.zip",
+    "ModulePageUrl": "https://github.com/OrendCross/LinkFT.BabbleTongueIntegration",
+    "DllFileName": "SteamLinkBabbleTongueIntegration.dll"
 }
